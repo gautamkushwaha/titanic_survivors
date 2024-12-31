@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Flask App</title>
+</head>
+<body>
+    <h1>Titanic Survival Predictor</h1>
+    <form action="/predict" method="post">
+        <label for="Pclass">Pclass (1, 2, 3):</label><br>
+        <input type="number" id="Pclass" name="Pclass" required><br><br>
+
+        <label for="Sex">Sex (0 = Male, 1 = Female):</label><br>
+        <input type="number" id="Sex" name="Sex" required><br><br>
+
+        <label for="Age">Age:</label><br>
+        <input type="number" id="Age" name="Age" step="any" required><br><br>
+
+        <label for="Fare">Fare:</label><br>
+        <input type="number" id="Fare" name="Fare" step="any" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
